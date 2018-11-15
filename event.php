@@ -51,7 +51,7 @@
                 console.log(json);
         } else {
             httpReq = new XMLHttpRequest();
-            httpReq.open('GET','https://maps.googleapis.com/maps/api/geocode/json?address='+locationDescription+'&key=AIzaSyD_3Mo_PNI1C1jhiNQlkeM_ewLmx03oi4I',false);
+            httpReq.open('GET','https://maps.googleapis.com/maps/api/geocode/json?address='+locationDescription+'&key=',false);
             httpReq.send();
             var json = JSON.parse(httpReq.responseText);
                 lat = json.results[0].geometry.location.lat;
@@ -141,7 +141,7 @@
     
     $eventId = $_GET['eventId'];
 
-    $event_url = 'https://app.ticketmaster.com/discovery/v2/events/'.$eventId.'?apikey=A4TlIeloUW72ysAGiyniEoY3D7LI6Dre&';
+    $event_url = 'https://app.ticketmaster.com/discovery/v2/events/'.$eventId.'?apikey=';
     
     echo $event_url;
 
@@ -215,7 +215,7 @@
     
     $venueId = $_GET['venueId'];
 
-    $venue_url = 'https://app.ticketmaster.com/discovery/v2/venues/'.$venueId.'?apikey=A4TlIeloUW72ysAGiyniEoY3D7LI6Dre&';
+    $venue_url = 'https://app.ticketmaster.com/discovery/v2/venues/'.$venueId.'?apikey=';
     
     echo $venue_url;
 
@@ -287,7 +287,7 @@
           
           try{
            
-           $url = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=A4TlIeloUW72ysAGiyniEoY3D7LI6Dre&keyword='.$keyword.'&segmentId='.$category.'&radius='.$radius.'&geoPoint='.$geoPoint.'&unit=miles';
+           $url = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=&keyword='.$keyword.'&segmentId='.$category.'&radius='.$radius.'&geoPoint='.$geoPoint.'&unit=miles';
                 echo $url;
               $tkt_master_response = file_get_contents($url);
                 
